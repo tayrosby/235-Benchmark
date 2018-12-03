@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+		<title>Rest Test Page</title>
+</h:head> 
+<body> 
+<!-- Set the layout and title for the page -->
+<ui:composition template= "/layouts/commonLayout.xhtml">
+<ui:define name="title">Rest Test Page</ui:define>
+<ui:define name="content">
+<!-- Login Form -->
+<div align = "center">
+
+	<h:form>
+	<!-- takes input and shows validation errors -->		
+		Book Name: <h:inputText id= "bookname" value= "#{verse.bookName}" title=""></h:inputText>
+		Chapter: <h:inputText id= "chapter" value= "#{verse.chapter}" title=""></h:inputText>
+		Verse: <h:inputText id= "verse" value= "#{verse.verseNumber}" title=""></h:inputText>
+		<h:commandButton value="Search" action="#{formController.onSearchFull(verse)}" /><br/><!-- Managed Bean is a method argument in controller -->
+	</h:form>
+  
+  <!-- prints all the messages -->
+	</div>
+	</ui:define>
+	</ui:composition>
+</body> 
+</html>
